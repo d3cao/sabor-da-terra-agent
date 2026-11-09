@@ -1,0 +1,31 @@
+id_transacao,data,produtor_id,produtor_nome,produtor_cpf,comprador,tipo,produto,quantidade_kg,valor_unitario,valor_total,forma_pagamento,status_pagamento,data_vencimento,data_pagamento,chave_pix_deposito,observacao
+FIN-2026-001,2026-09-02,P001,Maria das Graças Silva Ferreira,831.452.674-90,Mercado Bom Preço,venda,goiaba paluma,120,4.50,540.00,boleto 30 dias,pago,2026-10-02,2026-10-01,831.452.674-90,
+FIN-2026-002,2026-09-02,P001,Maria das Graças Silva Ferreira,831.452.674-90,Mercado Bom Preço,venda,manga tommy,80,5.00,400.00,boleto 30 dias,pago,2026-10-02,2026-10-01,831.452.674-90,
+FIN-2026-003,2026-09-05,P003,Cícero Romão de Almeida,723.016.498-55,Restaurante Raízes,venda,queijo coalho,45,32.00,1440.00,pix,pago,2026-09-05,2026-09-05,723.016.498-55,
+FIN-2026-004,2026-09-05,P007,Antônio Carlos Pereira Lima,892.435.176-60,Restaurante Raízes,venda,manteiga de garrafa,15,45.00,675.00,pix,pago,2026-09-05,2026-09-05,892.435.176-60,
+FIN-2026-005,2026-09-08,P002,José Antônio dos Santos,294.187.563-41,Prefeitura de Garanhuns - PNAE,venda,mel silvestre,30,55.00,1650.00,empenho 45 dias,pendente,2026-10-23,,jose.santos.mel@email.com,Empenho 2026NE00234
+FIN-2026-006,2026-09-08,P004,Ana Lúcia Bezerra da Costa,456.923.817-03,Prefeitura de Garanhuns - PNAE,venda,alface,300,2.50,750.00,empenho 45 dias,pendente,2026-10-23,,(87) 99901-5567,Empenho 2026NE00234
+FIN-2026-007,2026-09-08,P004,Ana Lúcia Bezerra da Costa,456.923.817-03,Prefeitura de Garanhuns - PNAE,venda,coentro,150,1.80,270.00,empenho 45 dias,pendente,2026-10-23,,(87) 99901-5567,Empenho 2026NE00234
+FIN-2026-008,2026-09-10,P005,Francisco de Assis Cordeiro,118.764.532-89,Mercado Bom Preço,venda,macaxeira,200,3.20,640.00,boleto 30 dias,pago,2026-10-10,2026-10-12,118.764.532-89,Pago com 2 dias de atraso
+FIN-2026-009,2026-09-10,P005,Francisco de Assis Cordeiro,118.764.532-89,Mercado Bom Preço,venda,inhame,100,4.80,480.00,boleto 30 dias,pago,2026-10-10,2026-10-12,118.764.532-89,Pago com 2 dias de atraso
+FIN-2026-010,2026-09-12,P006,Severina Maria do Nascimento,567.341.298-16,Lanchonete da Feira,venda,banana prata,60,3.50,210.00,pix,pago,2026-09-12,2026-09-12,567.341.298-16,
+FIN-2026-011,2026-09-15,P009,Marcos Vinícius da Rocha,671.234.589-07,Hospital São Francisco,venda,alface,80,2.80,224.00,boleto 30 dias,pago,2026-10-15,2026-10-15,marcos.rocha.agro@gmail.com,
+FIN-2026-012,2026-09-15,P009,Marcos Vinícius da Rocha,671.234.589-07,Hospital São Francisco,venda,couve,40,3.50,140.00,boleto 30 dias,pago,2026-10-15,2026-10-15,marcos.rocha.agro@gmail.com,
+FIN-2026-013,2026-09-18,P003,Cícero Romão de Almeida,723.016.498-55,Rede SuperBom Atacado,venda,queijo coalho,150,30.00,4500.00,boleto 30 dias,pendente,2026-10-18,,723.016.498-55,ATRASADO - cobrar
+FIN-2026-014,2026-09-18,P003,Cícero Romão de Almeida,723.016.498-55,Rede SuperBom Atacado,venda,queijo manteiga,40,38.00,1520.00,boleto 30 dias,pendente,2026-10-18,,723.016.498-55,ATRASADO - cobrar
+FIN-2026-015,2026-09-20,P001,Maria das Graças Silva Ferreira,831.452.674-90,Restaurante Raízes,venda,goiaba paluma,30,5.00,150.00,pix,pago,2026-09-20,2026-09-20,831.452.674-90,
+FIN-2026-016,2026-09-22,P012,Luciana Ferreira Gomes,912.345.678-01,Mercado Bom Preço,venda,tomate,80,6.50,520.00,boleto 30 dias,pago,2026-10-22,2026-10-22,912.345.678-01,
+FIN-2026-017,2026-09-22,P012,Luciana Ferreira Gomes,912.345.678-01,Mercado Bom Preço,venda,pimentão,30,7.00,210.00,boleto 30 dias,pago,2026-10-22,2026-10-22,912.345.678-01,
+FIN-2026-018,2026-09-25,P017,Wellington da Silva Monteiro,567.890.123-34,Hotel Fazenda Serra Negra,venda,frango caipira,50,28.00,1400.00,transferência,pago,2026-09-25,2026-09-26,567.890.123-34,
+FIN-2026-019,2026-09-25,P017,Wellington da Silva Monteiro,567.890.123-34,Hotel Fazenda Serra Negra,venda,ovos caipira,40,18.00,720.00,transferência,pago,2026-09-25,2026-09-26,567.890.123-34,Preço por dúzia
+FIN-2026-020,2026-09-28,P014,Mariana de Fátima Cordeiro,678.901.234-56,Sorveteria Tropical,venda,morango,30,22.00,660.00,pix,pago,2026-09-28,2026-09-28,(87) 99923-4489,
+FIN-2026-021,2026-10-01,P008,Josefa Alves de Souza,345.678.912-34,Restaurante Raízes,venda,mel silvestre,10,58.00,580.00,pix,pago,2026-10-01,2026-10-01,(87) 99845-6623,
+FIN-2026-022,2026-10-01,P008,Josefa Alves de Souza,345.678.912-34,Restaurante Raízes,venda,geleia de frutas,8,35.00,280.00,pix,pago,2026-10-01,2026-10-01,(87) 99845-6623,
+FIN-2026-023,2026-10-05,P016,Terezinha de Jesus Oliveira,345.012.678-90,Mercado Bom Preço,venda,rapadura,100,12.00,1200.00,boleto 30 dias,pendente,2026-11-05,,(87) 99867-2201,
+FIN-2026-024,2026-10-10,P010,Raimunda Nonata de Lima,234.891.567-72,Mercado Bom Preço,venda,goiaba paluma,80,4.50,360.00,boleto 30 dias,pendente,2026-11-10,,234.891.567-72,
+FIN-2026-025,2026-10-10,P010,Raimunda Nonata de Lima,234.891.567-72,Mercado Bom Preço,venda,manga tommy,50,5.00,250.00,boleto 30 dias,pendente,2026-11-10,,234.891.567-72,
+FIN-2026-026,2026-10-15,P011,Pedro Henrique Albuquerque,789.012.345-68,Lanchonete da Feira,venda,queijo coalho,20,33.00,660.00,pix,pago,2026-10-15,2026-10-15,789.012.345-68,
+FIN-2026-027,2026-10-15,P013,Edmilson Pereira da Silva,456.789.123-45,SESC Garanhuns,venda,farinha de mandioca,50,8.00,400.00,empenho 45 dias,pendente,2026-11-30,,456.789.123-45,Empenho 2026NE00312
+FIN-2026-028,2026-10-20,P018,Débora Cristina de Melo,890.123.456-78,Feira Orgânica do Recife,venda,mel silvestre,15,60.00,900.00,pix,pago,2026-10-20,2026-10-20,890.123.456-78,
+FIN-2026-029,2026-10-20,P018,Débora Cristina de Melo,890.123.456-78,Feira Orgânica do Recife,venda,pólen,5,85.00,425.00,pix,pago,2026-10-20,2026-10-20,890.123.456-78,
+FIN-2026-030,2026-10-25,P007,Antônio Carlos Pereira Lima,892.435.176-60,Prefeitura de Garanhuns - PNAE,venda,queijo coalho,80,31.00,2480.00,empenho 45 dias,pendente,2026-12-09,,892.435.176-60,Empenho 2026NE00345

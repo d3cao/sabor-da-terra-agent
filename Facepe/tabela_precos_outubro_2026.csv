@@ -1,0 +1,54 @@
+produto,unidade,preco_convencional,preco_organico,desconto_atacado_pct,volume_minimo_atacado_kg,observacao
+goiaba paluma extra,kg,4.00,5.50,10,100,
+goiaba paluma especial,kg,3.50,4.50,10,100,
+manga tommy,kg,5.00,5.50,10,100,Disponível apenas out-mar
+acerola,kg,6.00,7.50,8,50,
+banana prata,kg,3.50,n/d,8,50,Sem produtor orgânico
+maracujá,kg,6.00,n/d,8,50,Sem produtor orgânico
+cajá,kg,8.00,n/d,0,0,Safra curta nov-jan. Disponibilidade limitada
+umbu,kg,7.00,n/d,0,0,Safra fev-mai apenas
+graviola,kg,9.00,n/d,0,0,Disponibilidade irregular
+coco verde,unidade,3.50,n/d,10,50,
+morango,kg,18.00,22.00,5,30,Safra jun-set. Fora de safra: sob consulta
+amora,kg,25.00,30.00,5,20,Disponibilidade limitada
+mirtilo,kg,45.00,55.00,0,0,Produção pequena mai-set
+framboesa,kg,50.00,60.00,0,0,Produção muito pequena jun-set
+queijo coalho,kg,32.00,38.00,5,100,
+queijo manteiga,kg,38.00,n/d,5,50,Apenas P003 (convencional)
+ricota,kg,28.00,n/d,5,30,Apenas P003
+manteiga de garrafa,kg,45.00,52.00,5,30,
+nata,kg,25.00,30.00,0,0,Produção pequena
+iogurte natural,litro,12.00,n/d,0,0,Apenas P011 (sem SIE para revenda)
+leite,litro,4.50,5.50,0,0,Disponível para derivados. Volume reduz jun-set
+mel silvestre,kg,48.00,58.00,8,20,
+mel de jandaíra,kg,n/d,140.00,0,0,Apenas P002. Produção limitada
+própolis,kg,n/d,180.00,0,0,Apenas P002
+pólen,kg,n/d,85.00,0,0,Apenas P018
+cera de abelha,kg,n/d,65.00,0,0,Apenas P018
+alface,unidade,2.50,2.80,5,50,
+coentro,maço,1.80,2.00,5,50,
+cebolinha,maço,1.80,2.00,5,50,
+rúcula,maço,3.00,3.50,5,30,
+espinafre,maço,3.50,4.00,5,30,
+couve,maço,2.50,3.00,5,30,
+hortelã,maço,2.00,2.50,5,30,
+manjericão,maço,2.50,3.00,5,30,
+tomate santa cruz,kg,6.00,7.00,5,50,
+tomate cereja,kg,10.00,12.00,0,0,Apenas P004
+pimentão verde,kg,5.00,6.00,5,30,
+pimentão colorido,kg,7.00,8.00,5,30,
+pepino,kg,4.50,5.00,5,30,
+berinjela,kg,5.00,5.50,5,30,
+quiabo,kg,5.50,6.00,5,30,Reduz no frio (jun-ago)
+macaxeira,kg,3.20,n/d,10,100,
+inhame,kg,4.80,n/d,10,50,Pico abr-jul
+batata doce,kg,4.00,n/d,10,50,
+farinha de mandioca,kg,8.00,n/d,8,50,
+tapioca/goma,kg,6.50,n/d,8,30,
+rapadura,kg,12.00,n/d,8,50,Apenas P016
+açúcar mascavo,kg,10.00,n/d,8,30,Apenas P016
+melado,litro,15.00,n/d,0,0,Apenas P016
+geleia de frutas,kg,30.00,35.00,0,0,Variados sabores. P008
+doce de goiaba,kg,25.00,28.00,0,0,P008
+frango caipira,kg,28.00,n/d,5,30,ATENÇÃO: P017 sem SIE - venda direta apenas
+ovos caipira,dúzia,18.00,n/d,5,50,dúzias para atacado. P017

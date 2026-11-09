@@ -1,0 +1,21 @@
+lote_id,data_colheita,data_entrega,produtor_id,produtor_nome,produtor_cpf,produto,quantidade_kg,comprador,pedido_id,temperatura_transporte_c,validade,inspecao_visual,observacao
+LOT-2026-0089,2026-09-01,2026-09-02,P003,Cícero Romão de Almeida,723.016.498-55,queijo coalho,45,Restaurante Raízes,PED-2026-SEP-003,8,2026-10-02,aprovado,
+LOT-2026-0090,2026-09-01,2026-09-02,P007,Antônio Carlos Pereira Lima,892.435.176-60,manteiga de garrafa,15,Restaurante Raízes,PED-2026-SEP-003,ambiente,2027-03-01,aprovado,
+LOT-2026-0091,2026-09-02,2026-09-02,P001,Maria das Graças Silva Ferreira,831.452.674-90,goiaba paluma,120,Mercado Bom Preço,PED-2026-SEP-005,ambiente,2026-09-09,aprovado,
+LOT-2026-0092,2026-09-02,2026-09-02,P001,Maria das Graças Silva Ferreira,831.452.674-90,manga tommy,80,Mercado Bom Preço,PED-2026-SEP-005,ambiente,2026-09-10,aprovado,
+LOT-2026-0093,2026-09-05,2026-09-08,P002,José Antônio dos Santos,294.187.563-41,mel silvestre,30,Prefeitura de Garanhuns - PNAE,PED-2026-SEP-008,ambiente,2028-09-05,aprovado,Certificação orgânica anexa
+LOT-2026-0094,2026-09-06,2026-09-08,P004,Ana Lúcia Bezerra da Costa,456.923.817-03,alface,300,Prefeitura de Garanhuns - PNAE,PED-2026-SEP-008,12,2026-09-13,aprovado,300 unidades
+LOT-2026-0095,2026-09-06,2026-09-08,P004,Ana Lúcia Bezerra da Costa,456.923.817-03,coentro,150,Prefeitura de Garanhuns - PNAE,PED-2026-SEP-008,12,2026-09-11,aprovado,150 maços
+LOT-2026-0096,2026-09-09,2026-09-10,P005,Francisco de Assis Cordeiro,118.764.532-89,macaxeira,200,Mercado Bom Preço,PED-2026-SEP-012,ambiente,2026-09-20,aprovado,
+LOT-2026-0097,2026-09-09,2026-09-10,P005,Francisco de Assis Cordeiro,118.764.532-89,inhame,100,Mercado Bom Preço,PED-2026-SEP-012,ambiente,2026-09-24,aprovado,
+LOT-2026-0098,2026-09-15,2026-09-15,P009,Marcos Vinícius da Rocha,671.234.589-07,alface,80,Hospital São Francisco,PED-2026-SEP-015,10,2026-09-20,aprovado,80 unidades
+LOT-2026-0099,2026-09-15,2026-09-15,P009,Marcos Vinícius da Rocha,671.234.589-07,couve,40,Hospital São Francisco,PED-2026-SEP-015,10,2026-09-20,aprovado,40 maços (kg)
+LOT-2026-0100,2026-09-18,2026-09-18,P003,Cícero Romão de Almeida,723.016.498-55,queijo coalho,150,Rede SuperBom Atacado,PED-2026-SEP-018,7,2026-10-18,aprovado,
+LOT-2026-0101,2026-09-18,2026-09-18,P003,Cícero Romão de Almeida,723.016.498-55,queijo manteiga,40,Rede SuperBom Atacado,PED-2026-SEP-018,7,2026-10-18,aprovado,
+LOT-2026-0102,2026-09-22,2026-09-22,P012,Luciana Ferreira Gomes,912.345.678-01,tomate,80,Mercado Bom Preço,PED-2026-SEP-020,ambiente,2026-09-29,aprovado,
+LOT-2026-0103,2026-09-25,2026-09-25,P017,Wellington da Silva Monteiro,567.890.123-34,frango caipira,50,Hotel Fazenda Serra Negra,PED-2026-SEP-022,4,2026-09-28,aprovado,Abate no dia. Refrigerado.
+LOT-2026-0104,2026-10-01,2026-10-01,P008,Josefa Alves de Souza,345.678.912-34,mel silvestre,10,Restaurante Raízes,PED-2026-OCT-001,ambiente,2028-10-01,aprovado,Certificação orgânica anexa
+LOT-2026-0105,2026-10-10,2026-10-10,P010,Raimunda Nonata de Lima,234.891.567-72,goiaba paluma,80,Mercado Bom Preço,PED-2026-OCT-005,ambiente,2026-10-17,aprovado,Sem certificação orgânica
+LOT-2026-0106,2026-10-15,2026-10-15,P013,Edmilson Pereira da Silva,456.789.123-45,farinha de mandioca,50,SESC Garanhuns,PED-2026-OCT-008,ambiente,2027-04-15,aprovado,
+LOT-2026-0107,2026-10-20,2026-10-20,P018,Débora Cristina de Melo,890.123.456-78,mel silvestre,15,Feira Orgânica do Recife,PED-2026-OCT-010,ambiente,2028-10-20,aprovado,Certificação orgânica anexa
+LOT-2026-0108,2026-10-25,2026-10-25,P007,Antônio Carlos Pereira Lima,892.435.176-60,queijo coalho,80,Prefeitura de Garanhuns - PNAE,PED-2026-OCT-012,6,2026-11-25,aprovado,Certificação orgânica anexa

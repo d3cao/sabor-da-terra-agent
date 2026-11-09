@@ -1,0 +1,84 @@
+============================================================
+       LAUDO DE INSPEÇÃO SANITÁRIA - QUEIJARIA
+        Vigilância Sanitária Municipal de Caetés
+============================================================
+
+Laudo Nº: VS-CAE-2026-0034
+Data da Inspeção: 12/08/2026
+Tipo: Inspeção de rotina (semestral)
+
+DADOS DO ESTABELECIMENTO:
+  Razão Social: Cícero Romão de Almeida - Produtor Rural
+  CPF/CNPJ: 723.016.498-55
+  Registro SIE: PE-SIE-0756
+  Endereço: Sítio Serra Branca, Dist. São Pedro, Caetés - PE
+  Atividade: Fabricação artesanal de queijo coalho, queijo manteiga e ricota
+  Matéria-prima: Leite cru de produção própria (rebanho de 30 vacas)
+
+ITENS INSPECIONADOS:
+
+  1. Estrutura física
+     [X] Piso lavável e em bom estado
+     [X] Paredes azulejadas até o teto
+     [X] Telas nas janelas contra insetos
+     [X] Iluminação adequada
+     [X] Ventilação natural e exaustor
+     Resultado: CONFORME
+
+  2. Equipamentos
+     [X] Tanque de recepção em inox
+     [X] Pasteurizador lento (obs: NÃO utilizado - queijo de leite cru)
+     [X] Formas de polietileno em bom estado
+     [X] Prensa manual
+     [X] Câmara fria funcionando (temperatura: 6°C no momento da inspeção)
+     Resultado: CONFORME
+
+  3. Higiene
+     [X] Funcionários com uniformes e toucas
+     [X] Lavatório com sabonete e papel toalha
+     [X] Programa de limpeza documentado
+     [!] Lixeira da área de embalagem sem pedal (NC menor)
+     Resultado: CONFORME COM OBSERVAÇÃO
+
+  4. Água
+     [X] Poço artesiano com laudo de potabilidade vigente
+     [X] Cloração: 0,5 ppm (conforme)
+     [X] Reservatório limpo (última limpeza: 15/06/2026)
+     Resultado: CONFORME
+
+  5. Controle de pragas
+     [X] Contrato com empresa dedetizadora (Pragas Zero Ltda.)
+     [X] Relatório de visita: 01/08/2026
+     [X] Sem evidências de pragas
+     Resultado: CONFORME
+
+  6. Rastreabilidade
+     [X] Caderno de produção diária (data, volume de leite, quantidade produzida)
+     [X] Etiquetagem com lote, data de fabricação e validade
+     [X] Registro de temperatura da câmara fria (2x ao dia)
+     Resultado: CONFORME
+
+  7. Análises laboratoriais (último relatório: 01/07/2026)
+     - Coliformes totais: < 100 UFC/g (limite: 5.000)
+     - Coliformes termotolerantes: < 10 UFC/g (limite: 1.000)
+     - Staphylococcus aureus: < 100 UFC/g (limite: 1.000)
+     - Salmonella sp.: AUSENTE em 25g
+     - Listeria monocytogenes: AUSENTE em 25g
+     Resultado: CONFORME
+
+NÃO CONFORMIDADES:
+  NC-001 (menor): Lixeira da área de embalagem sem acionamento por pedal.
+  Prazo para correção: 30 dias (até 12/09/2026)
+  Status: Pendente de verificação
+
+RESULTADO GERAL: APROVADO
+
+Próxima inspeção: fevereiro/2027
+
+____________________________________________________________
+Fiscal Responsável: Dra. Patrícia Mendes Cavalcanti
+  Médica Veterinária - CRMV-PE 6.789
+  Vigilância Sanitária Municipal de Caetés - PE
+
+Registro: Este laudo tem validade de 6 meses.
+============================================================

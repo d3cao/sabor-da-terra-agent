@@ -1,0 +1,92 @@
+============================================================
+   RELATÓRIO DE INSPEÇÃO - ADAGRO
+   Agência de Defesa Agropecuária de Pernambuco
+   Regional Agreste Meridional
+============================================================
+
+Relatório Nº: ADAGRO-AM-2026-0189
+Data da Inspeção: 15/05/2026 e 16/05/2026
+Tipo: Inspeção programada anual
+
+ESTABELECIMENTO INSPECIONADO:
+  Cooperativa Sabor da Terra
+  CNPJ: 45.678.901/0001-23
+  Endereço sede: Rua do Comércio, 234, Centro, Garanhuns - PE
+  Depósito/CD: Rod. BR-423 km 5, Galpão 3, Garanhuns - PE
+  Presidente: Lúcia Helena Barros Cavalcanti
+  CPF: 198.765.432-10
+  Responsável Técnico: Eng. Agrônomo João Marcos Ferreira
+  CREA-PE: 14.567-D
+
+PRODUTORES VISTORIADOS (amostragem):
+
+  1. P001 - Maria das Graças S. Ferreira (Garanhuns)
+     Produtos: Goiaba, acerola, manga
+     Certificação orgânica: VIGENTE (ORG-PE-2025-004721, val. 06/2027)
+     Situação: REGULAR
+
+  2. P002 - José Antônio dos Santos (Brejão)
+     Produtos: Mel silvestre, mel de jandaíra, própolis
+     Certificação orgânica: VIGENTE (ORG-PE-2025-003198, val. 03/2027)
+     Registro SIE casa do mel: VIGENTE (PE-SIE-0892)
+     Situação: REGULAR
+
+  3. P003 - Cícero Romão de Almeida (Caetés)
+     Produtos: Queijo coalho, queijo manteiga, ricota
+     Certificação orgânica: NÃO POSSUI
+     Registro SIE queijaria: VIGENTE (PE-SIE-0756)
+     Situação: REGULAR
+
+  4. P005 - Francisco de Assis Cordeiro (Garanhuns)
+     Produtos: Macaxeira, inhame, batata doce
+     Certificação orgânica: NÃO POSSUI
+     DAP/CAF: VIGENTE
+     Situação: REGULAR
+
+  5. P017 - Wellington da Silva Monteiro (Garanhuns)
+     Produtos: Frango caipira, ovos caipira
+     Certificação orgânica: NÃO POSSUI
+     Registro SIE: NÃO POSSUI
+     Situação: IRREGULAR - Produtor de frango caipira sem registro
+     no Serviço de Inspeção. Comercialização limitada a venda
+     direta ao consumidor final até regularização.
+
+INSPEÇÃO DO DEPÓSITO CENTRAL (CD):
+  - Área de recebimento: CONFORME
+  - Câmara fria (laticínios): CONFORME (4°C)
+  - Câmara fria (frutas): CONFORME (10°C)
+  - Área seca (grãos, mel, processados): CONFORME
+  - Controle de pragas: CONFORME
+  - Rastreabilidade: CONFORME (sistema de lotes por produtor)
+  - Veículos de transporte: CONFORME COM OBSERVAÇÃO
+    * Caminhão baú refrigerado (placa ABC-1234): OK
+    * Caminhonete com caixa isotérmica (placa DEF-5678):
+      Termômetro de transporte descalibrado. Providenciar
+      calibração em 15 dias.
+
+NÃO CONFORMIDADES:
+  NC-001 (GRAVE): Produtor P017 (frango caipira) sem registro SIE.
+    Ação: Cooperativa deve suspender a intermediação de frango caipira
+    até que o produtor obtenha o registro junto ao SIE municipal.
+    Prazo: Imediato.
+    NOTA: Ovos não exigem SIE para venda direta ao consumidor.
+
+  NC-002 (MENOR): Termômetro de transporte descalibrado no veículo
+    placa DEF-5678.
+    Prazo: 15 dias.
+
+RESULTADO GERAL: APROVADO COM RESTRIÇÕES
+
+Próxima inspeção programada: maio/2027
+Inspeções sem aviso prévio podem ocorrer a qualquer momento.
+
+____________________________________________________________
+Fiscal Estadual: Dr. Paulo Roberto Farias
+  Médico Veterinário - CRMV-PE 5.432
+  ADAGRO - Regional Agreste Meridional
+
+Ciente: ___________________________
+  Lúcia Helena Barros Cavalcanti
+  Presidente - Cooperativa Sabor da Terra
+  CPF: 198.765.432-10
+============================================================

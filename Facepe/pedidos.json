@@ -1,0 +1,137 @@
+[
+  {
+    "id": "PED-2026-001",
+    "data_recebimento": "2026-10-28T09:15:00",
+    "canal": "email",
+    "remetente": "compras@restauranteraizes.com.br",
+    "comprador": "Restaurante Raízes",
+    "mensagem_original": "Bom dia! Preciso pra essa sexta (01/nov): 30kg de queijo coalho, 10kg de manteiga de garrafa, 5kg de mel (aquele silvestre mesmo), 20 maços de coentro e 10 de cebolinha. Se tiver ricota fresca também quero uns 5kg. Obrigado! Carlos.",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-002",
+    "data_recebimento": "2026-10-28T10:32:00",
+    "canal": "formulario_web",
+    "remetente": "Mercado Bom Preço - Filial Centro",
+    "comprador": "Mercado Bom Preço",
+    "mensagem_original": "Pedido semanal: goiaba paluma 50kg, banana prata 40kg, maracuja 25kg, macaxeira 60kg, inhame 30kg, tomate 20kg, alface 50 unid, rucula 30 maços. Entrega terça 04/nov no CD. Nota fiscal no CNPJ 12.345.678/0001-90. Contato: Seu Ernesto (87) 3761-1234.",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-003",
+    "data_recebimento": "2026-10-28T11:05:00",
+    "canal": "whatsapp",
+    "remetente": "(81) 99234-5678",
+    "comprador": "Chef Amanda - Bistrô Sertão Gourmet",
+    "mensagem_original": "oi td bem? to precisando daquele queijo q vcs mandaram da ultima vez, o mais artesanal sabe? uns 15kg. e tem mel de jandaíra?? quero 3kg. preciso urgente pra amanha se possivel. manda o pix q eu transfiro agora",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-004",
+    "data_recebimento": "2026-10-28T14:20:00",
+    "canal": "email",
+    "remetente": "licitacoes@educacao.garanhuns.pe.gov.br",
+    "comprador": "Prefeitura de Garanhuns - PNAE",
+    "mensagem_original": "Prezada Cooperativa Sabor da Terra,\n\nConforme Contrato nº 045/2026-PNAE, solicitamos a entrega dos itens abaixo para o período de 04 a 08 de novembro de 2026, referente à alimentação escolar:\n\n- Banana prata: 200kg\n- Goiaba: 100kg\n- Macaxeira: 150kg\n- Inhame: 80kg\n- Alface: 200 unidades\n- Coentro: 100 maços\n- Tomate: 50kg\n- Mel silvestre (com certificação orgânica): 20kg\n- Ovos caipira: 100 dúzias\n\nLembramos que todos os produtos devem estar acompanhados das respectivas notas fiscais e certificações quando aplicável. A entrega deve ser feita no depósito central, Rua da Educação, 500, das 7h às 12h.\n\nAtenciosamente,\nDr. Fernando Augusto Mendes\nCPF: 034.567.891-23\nCoordenador de Alimentação Escolar\nSecretaria de Educação de Garanhuns",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-005",
+    "data_recebimento": "2026-10-28T15:40:00",
+    "canal": "whatsapp",
+    "remetente": "(87) 99187-6543",
+    "comprador": "Dona Cremilda - Lanchonete da Feira",
+    "mensagem_original": "lucia minha filha me manda 10kg de queijo coalho e 5kg de manteiga pra sabado, o de sempre ne. bjs",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-006",
+    "data_recebimento": "2026-10-29T08:00:00",
+    "canal": "email",
+    "remetente": "atacado@superbom.com.br",
+    "comprador": "Rede SuperBom Atacado",
+    "mensagem_original": "PEDIDO URGENTE\n\nNecessitamos com máxima urgência para HOJE (29/10):\n- Queijo coalho: 200kg\n- Queijo manteiga: 50kg\n- Mel silvestre orgânico: 40kg\n- Goiaba: 300kg\n\nPagamento: boleto 30 dias conforme contrato.\nEntrega: CD SuperBom, BR-423 km 12, Garanhuns.\n\nSe não atenderem hoje perdemos a promoção de fim de semana.\n\nRoberto Cavalcanti\nGerente de Compras",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-007",
+    "data_recebimento": "2026-10-29T09:30:00",
+    "canal": "formulario_web",
+    "remetente": "Hotel Fazenda Serra Negra",
+    "comprador": "Hotel Fazenda Serra Negra",
+    "mensagem_original": "Pedido para evento de 08/nov (jantar regional, 120 convidados): queijo coalho 25kg, queijo manteiga 10kg, mel variado 8kg (preferencialmente orgânico), goiaba 20kg, cajá 10kg (se tiver), rapadura 15kg, tapioca/goma 10kg, frango caipira 40kg, ovos caipira 30 dúzias. Precisamos saber disponibilidade e valor total. Contato: Fernanda, (87) 3762-8800 ramal 204.",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-008",
+    "data_recebimento": "2026-10-29T10:15:00",
+    "canal": "whatsapp",
+    "remetente": "(87) 99333-2211",
+    "comprador": "Marcos - Sorveteria Tropical",
+    "mensagem_original": "E aí pessoal! Vcs tem morango e amora? To querendo fazer uma linha nova de sorvetes. Preciso de uns 50kg de cada por semana se o preço for bom. Manda a tabela de preço aí. Ah e precisa ser orgânico pq vou botar no rótulo",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-009",
+    "data_recebimento": "2026-10-29T11:45:00",
+    "canal": "email",
+    "remetente": "nutricao@hospitalsaofrancisco.com.br",
+    "comprador": "Hospital São Francisco",
+    "mensagem_original": "Prezados,\n\nSolicitamos cotação e disponibilidade para fornecimento semanal:\n- Frutas variadas (goiaba, banana, manga, maracujá): 100kg total\n- Hortaliças (alface, couve, espinafre, tomate, cebolinha): 60kg total\n- Ovos caipira: 50 dúzias\n- Mel puro: 5kg\n\nInformamos que é OBRIGATÓRIO:\n1. Certificação orgânica para todos os itens possíveis\n2. Laudo sanitário atualizado\n3. Rastreabilidade completa (produtor, lote, data de colheita)\n\nFavor enviar junto com a proposta: cópias das certificações, fichas técnicas dos produtos e dados cadastrais dos produtores fornecedores (nome, CPF, endereço e registro no CAF).\n\nRosangela Patriota\nNutricionista Chefe - CRN 12345\nHospital São Francisco de Garanhuns",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-010",
+    "data_recebimento": "2026-10-29T14:00:00",
+    "canal": "whatsapp",
+    "remetente": "(87) 99456-7890",
+    "comprador": "João Pedro - Feira Orgânica do Recife",
+    "mensagem_original": "Boa tarde! Sou o João Pedro da Feira Orgânica do Recife. Quero fechar um fornecimento mensal de tudo que vocês tiverem COM certificação orgânica. Me passem a lista completa dos produtos orgânicos, quais produtores fornecem, as datas de validade das certificações e os preços. Posso buscar aí toda segunda-feira de manhã.",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-011",
+    "data_recebimento": "2026-10-30T07:50:00",
+    "canal": "email",
+    "remetente": "exporta@tropicalfruits.com.br",
+    "comprador": "Tropical Fruits Exportadora",
+    "mensagem_original": "Dear Sabor da Terra,\n\nWe are interested in sourcing organic tropical fruits for export to the European market. We need:\n- Mango: 500kg/month\n- Guava: 300kg/month\n- Passion fruit: 200kg/month\n\nAll products MUST have valid organic certification (Brazilian and international equivalent). Please provide:\n1. Complete producer list with certifications\n2. Traceability documentation\n3. Phytosanitary certificates\n4. Bank details for international wire transfer\n\nRegards,\nDr. Heinrich Mueller\nSourcing Director",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-012",
+    "data_recebimento": "2026-10-30T09:20:00",
+    "canal": "whatsapp",
+    "remetente": "(87) 99812-3456",
+    "comprador": "Maria das Graças (Produtora P001)",
+    "mensagem_original": "Dona Lúcia, tô ligando pra saber quanto eu vendi esse mês. E aquele pagamento do Mercado Bom Preço de setembro, já caiu? Minha conta é no BB agência 0437. Me diz quanto tá o saldo que eu tenho pra receber. Bjs",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-013",
+    "data_recebimento": "2026-10-30T10:45:00",
+    "canal": "formulario_web",
+    "remetente": "SESC Garanhuns",
+    "comprador": "SESC - Unidade Garanhuns",
+    "mensagem_original": "Pedido para colônia de férias (jan/2027, 200 crianças, 15 dias):\nFrutas: 500kg variadas\nHortaliças: 200kg variadas\nQueijo coalho: 50kg\nMel: 10kg\nOvos: 200 dúzias\nFrango caipira: 100kg\nMacaxeira: 80kg\n\nPrecisamos de orçamento detalhado com preço unitário por kg. Favor informar se todos os produtores possuem DAP/CAF ativa. Pagamento via empenho. NF com dados: SESC-PE CNPJ 10.578.224/0034-56.\n\nCláudia Mendonça - Coordenadora\nRG: 5.432.109 SDS/PE\nCPF: 876.543.210-98",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-014",
+    "data_recebimento": "2026-10-30T13:30:00",
+    "canal": "email",
+    "remetente": "fiscalizacao@adagro.pe.gov.br",
+    "comprador": "ADAGRO - Agência de Defesa Agropecuária",
+    "mensagem_original": "NOTIFICAÇÃO\n\nÀ Cooperativa Sabor da Terra,\n\nInformamos que será realizada inspeção sanitária nos dias 11 e 12 de novembro de 2026. Solicitamos que estejam disponíveis para consulta:\n- Cadastro atualizado de todos os produtores (nome, CPF, endereço, produtos)\n- Certificações orgânicas vigentes\n- Laudos sanitários dos últimos 12 meses\n- Registro de rastreabilidade dos últimos 3 lotes de cada produto\n- Contratos com compradores institucionais\n\nO não atendimento poderá resultar em suspensão do SIE.\n\nDr. Paulo Roberto Farias\nFiscal Estadual Agropecuário\nADAGRO - Regional Agreste Meridional",
+    "status": "pendente"
+  },
+  {
+    "id": "PED-2026-015",
+    "data_recebimento": "2026-10-30T16:00:00",
+    "canal": "whatsapp",
+    "remetente": "(87) 99745-1098",
+    "comprador": "Cícero (Produtor P003)",
+    "mensagem_original": "Lúcia, to com 200kg de queijo coalho pronto e 30kg de manteiga. Tem pedido pra mim essa semana? Se não tiver vou vender na feira direto. Me avisa até amanhã. E outra coisa: meu vizinho Sebastião quer se cadastrar na cooperativa, ele produz doce de leite e queijo de cabra. O CPF dele é 432.198.765-01, mora aqui no Sítio Vizinho, Caetés. Posso passar o contato dele?",
+    "status": "pendente"
+  }
+]

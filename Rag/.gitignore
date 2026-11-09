@@ -1,0 +1,8 @@
+# Ignora a pasta de dados local dos testes
+Facepe/
+
+# Python e Cache
+__pycache__/
+*.py[cod]
+.venv/
+.streamlit/
