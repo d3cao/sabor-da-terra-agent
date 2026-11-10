@@ -1,17 +1,27 @@
 import os
 import sys
+from dotenv import load_dotenv
 import ollama
 import streamlit as st
 
+# Carrega as variáveis de ambiente do arquivo .env (na raiz do projeto)
+load_dotenv()
+
+# Define o modelo Ollama obtido do .env ou assume 'gpt-oss:120b-cloud' como fallback
+MODELO_OLLAMA = os.getenv("OLLAMA_MODEL", "gpt-oss:120b-cloud")
+
+# Configuração da Página do Streamlit (deve vir no início das chamadas do Streamlit)
 st.set_page_config(
     page_title="Sabor da Terra - Assistente Construtor", layout="centered"
 )
 
+# Adiciona o diretório raiz ao path do Python com segurança
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
 if parent_dir not in sys.path:
   sys.path.append(parent_dir)
 
+# Importação dos módulos locais da equipe
 try:
   from Rag.financeiro_modulo import apurar_financeiro
   from Rag.produtores_modulo import (
@@ -27,8 +37,7 @@ except Exception as e:
 
 st.title("🌱 Assistente Inteligente - Cooperativa Sabor da Terra")
 st.markdown(
-    "*Módulo de Orquestração Local com Ollama (Agente Construtor +"
-    " Sub-Módulos)*"
+    f"*Módulo de Orquestração Local com Ollama (`{MODELO_OLLAMA}`)*"
 )
 
 if not modulos_carregados:
@@ -134,12 +143,11 @@ if prompt := st.chat_input(
           nome_alvo = "Ana"
         resposta = gerar_resumo_produtor(nome_alvo)
 
-      # Intenção 5: Se nenhuma regra anterior disparar, o Ollama assume e responde livremente
+      # Intenção 5: Execução via Ollama configurado no .env
       else:
         try:
-          # Faz a chamada local ao Ollama (pode alterar 'llama3' para o modelo que tiver instalado, ex: 'llama3.2')
           resposta_ollama = ollama.chat(
-              model="llama3",
+              model=MODELO_OLLAMA,
               messages=[{
                   "role": "system",
                   "content": (
@@ -155,9 +163,9 @@ if prompt := st.chat_input(
           resposta = resposta_ollama["message"]["content"]
         except Exception as err:
           resposta = (
-              f"🤖 **Agente Construtor:** (Ollama offline ou modelo não"
-              f" encontrado: {err}). Tente pedir um resumo financeiro ou consulta"
-              " documental."
+              f"🤖 **Agente Construtor:** (Ollama offline ou modelo"
+              f" '{MODELO_OLLAMA}' não encontrado: {err}). Tente pedir um resumo"
+              " financeiro ou consulta documental."
           )
 
     st.markdown(resposta)
