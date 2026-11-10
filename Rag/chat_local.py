@@ -1,22 +1,24 @@
 import os
 import sys
+import ollama
 import streamlit as st
 
-# Configuração da Página do Streamlit (Deve ser sempre a primeira instrução Streamlit)
 st.set_page_config(
     page_title="Sabor da Terra - Assistente Construtor", layout="centered"
 )
 
-# Adiciona o diretório raiz ao path do Python com segurança absoluta
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
 if parent_dir not in sys.path:
   sys.path.append(parent_dir)
 
-# Importação segura dos módulos desenvolvidos pela equipe
 try:
   from Rag.financeiro_modulo import apurar_financeiro
-  from Rag.produtores_modulo import buscar_acervo_local
+  from Rag.produtores_modulo import (
+      buscar_acervo_local,
+      gerar_resumo_produtor,
+      processar_pedido_natural,
+  )
 
   modulos_carregados = True
 except Exception as e:
@@ -25,54 +27,43 @@ except Exception as e:
 
 st.title("🌱 Assistente Inteligente - Cooperativa Sabor da Terra")
 st.markdown(
-    "*Módulo de Orquestração Local (Agente Construtor + Sub-Módulos)*"
+    "*Módulo de Orquestração Local com Ollama (Agente Construtor +"
+    " Sub-Módulos)*"
 )
 
-# Alerta caso haja algum problema de importação dos módulos
 if not modulos_carregados:
-  st.error(
-      f"⚠️ Erro ao carregar os módulos locais: {erro_import}. Verifique se os"
-      " arquivos estão na pasta Rag/."
-  )
+  st.error(f"⚠️ Erro ao carregar os módulos locais: {erro_import}")
 
-# Inicializa o histórico de conversas na sessão
 if "messages" not in st.session_state:
   st.session_state.messages = []
 
-# Exibe o histórico de mensagens na interface do Streamlit
 for message in st.session_state.messages:
   with st.chat_message(message["role"]):
     st.markdown(message["content"])
 
-# Entrada do usuário pelo chat (Interface principal)
 if prompt := st.chat_input(
-    "Ex: 'Resumo de outubro da Ana' ou 'Quem tem certificação de mel?'"
+    "Digite sua mensagem (ex: 'Resumo da Ana', 'Certificação de mel', ou"
+    " qualquer dúvida)..."
 ):
-  # Adiciona a mensagem do usuário ao histórico
   st.session_state.messages.append({"role": "user", "content": prompt})
   with st.chat_message("user"):
     st.markdown(prompt)
 
-  # Lógica do Agente Construtor (Router / Orquestrador)
   resposta = ""
   prompt_lower = prompt.lower()
 
   with st.chat_message("assistant"):
-    with st.spinner("O Agente Construtor está a processar a solicitação..."):
+    with st.spinner("O Ollama e os sub-agentes estão a processar..."):
 
       if not modulos_carregados:
-        resposta = (
-            "⚠️ Os módulos de backend não estão disponíveis para processar o"
-            " pedido."
-        )
+        resposta = "⚠️ Os módulos de backend não estão disponíveis."
 
       # Intenção 1: Módulo Financeiro
       elif any(
           palavra in prompt_lower
           for palavra in ["resumo", "outubro", "financeiro", "vendas"]
       ):
-        # Identifica o produtor mencionado de forma dinâmica
-        nome_alvo = "Ana"  # Padrão
+        nome_alvo = "Ana"
         if "maria" in prompt_lower:
           nome_alvo = "Maria"
         elif "antonio" in prompt_lower or "antônio" in prompt_lower:
@@ -86,13 +77,12 @@ if prompt := st.chat_input(
               f"- **Produtora(o):** {dados_fin['produtor']}\n"
               f"- **Vendas Totais:** R$ {dados_fin['vendas_totais']:.2f}\n"
               f"- **Recebido:** R$ {dados_fin['recebido']:.2f}\n"
-              f"- **Em Aberto (Pendente):** R$ {dados_fin['em_aberto']:.2f}\n\n"
-              f"*(Dados processados deterministicamente via Pandas local).*_"
+              f"- **Em Aberto (Pendente):** R$ {dados_fin['em_aberto']:.2f}"
           )
         else:
           resposta = str(dados_fin)
 
-      # Intenção 2: Módulo de Produtores e Acervo (RAG Local)
+      # Intenção 2: Módulo de Acervo e RAG Local
       elif any(
           palavra in prompt_lower
           for palavra in [
@@ -117,21 +107,58 @@ if prompt := st.chat_input(
                 f"> *Trecho:* {ev['trecho']}\n\n"
             )
         else:
+          resposta = "🔍 **RAG Local:** Não encontrei referências diretas."
+
+      # Intenção 3: Processar Pedidos Informais
+      elif any(
+          palavra in prompt_lower
+          for palavra in ["pedido", "preciso de", "quero comprar", "encomenda"]
+      ):
+        resposta = processar_pedido_natural(prompt)
+
+      # Intenção 4: Notificações de Produtores
+      elif any(
+          palavra in prompt_lower
+          for palavra in [
+              "notificar",
+              "notificacao",
+              "notificação",
+              "resumo do produtor",
+              "comunicar",
+          ]
+      ):
+        nome_alvo = "Maria"
+        if "antonio" in prompt_lower or "antônio" in prompt_lower:
+          nome_alvo = "Antônio"
+        elif "ana" in prompt_lower:
+          nome_alvo = "Ana"
+        resposta = gerar_resumo_produtor(nome_alvo)
+
+      # Intenção 5: Se nenhuma regra anterior disparar, o Ollama assume e responde livremente
+      else:
+        try:
+          # Faz a chamada local ao Ollama (pode alterar 'llama3' para o modelo que tiver instalado, ex: 'llama3.2')
+          resposta_ollama = ollama.chat(
+              model="llama3",
+              messages=[{
+                  "role": "system",
+                  "content": (
+                      "Você é o assistente inteligente da cooperativa agrícola"
+                      " Sabor da Terra. Responda de forma prestativa, curta e"
+                      " objetiva em português."
+                  ),
+              }, {
+                  "role": "user",
+                  "content": prompt,
+              }],
+          )
+          resposta = resposta_ollama["message"]["content"]
+        except Exception as err:
           resposta = (
-              "🔍 **RAG Local:** Não encontrei referências diretas nos"
-              " documentos oficiais para esta consulta."
+              f"🤖 **Agente Construtor:** (Ollama offline ou modelo não"
+              f" encontrado: {err}). Tente pedir um resumo financeiro ou consulta"
+              " documental."
           )
 
-      # Intenção 3: Triagem ou Genérico
-      else:
-        resposta = (
-            "🤖 **Agente Construtor:** Compreendi a mensagem. Para consultar os"
-            " sub-agentes, experimente pedir o **resumo financeiro** (ex:"
-            " *'resumo de outubro da Ana'*) ou consultar o **acervo documental**"
-            " (ex: *'certificação de mel'*)."
-        )
-
     st.markdown(resposta)
-
-  # Salva a resposta no histórico da sessão
   st.session_state.messages.append({"role": "assistant", "content": resposta})
