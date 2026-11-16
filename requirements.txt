@@ -1,0 +1,7 @@
+# Python 3.11 ou superior (3.12 recomendado). O ADK 2.x não instala em versões anteriores.
+google-adk>=2.12
+streamlit
+pydantic>=2
+pandas
+python-dotenv
+pytest

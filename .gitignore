@@ -1,8 +1,25 @@
-# Ignora a pasta de dados local dos testes
+# Dados originais (fora do Git)
 Facepe/
 
-# Python e Cache
+# Segredos
+.env
+*.env
+!.env.example
+
+# Python e cache
 __pycache__/
 *.py[cod]
 .venv/
+venv/
+.pytest_cache/
+
+# Streamlit e ADK
 .streamlit/
+.adk/
+*.db
+
+# Editores e SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

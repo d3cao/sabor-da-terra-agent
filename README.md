@@ -1,122 +1,190 @@
 # Assistente Inteligente - Cooperativa Sabor da Terra
 
-Protótipo modular local de um assistente inteligente baseado em orquestração de sub-agentes determinísticos, RAG local e integração com LLM open-source (Ollama), desenvolvido para a automação de processos da **Cooperativa Sabor da Terra**.
+Protótipo de assistente conversacional para a **Cooperativa Sabor da Terra** (fictícia, 180 produtores no Agreste), construído com o **Google ADK** e o **Gemini**.
+
+> **Status:** esqueleto (P1-1). As 8 ferramentas existem como *stubs*: têm assinatura e docstring, mas ainda devolvem `"status": "erro"` com a mensagem "ainda não implementada". Cada dono substitui o stub pelo código real.
 
 ---
 
-## Aplicação no Estudo de Caso
+## Aplicação no estudo de caso
 
-Na gestão de uma cooperativa agrícola, as operações lidam frequentemente com três grandes gargalos:
-1. **Lentidão e ruído na comunicação:** Notificações de demandas e relatórios de repasse financeiro aos produtores dependem de processos telefônicos manuais e repetitivos.
-2. **Pedidez informal:** Clientes e compradores enviam pedidos em linguagem natural e coloquial (via mensagens de texto), dificultando a triagem e o controle de inventário.
-3. **Dispersão de documentos:** Laudos técnicos da ADAGRO, certificações orgânicas e contratos ficam armazenados de forma não estruturada.
+Na gestão de uma cooperativa agrícola, as operações esbarram em três gargalos:
 
-**A Solução:** O sistema atua como um assistente centralizado que interpreta pedidos informais, gera notificações e resumos financeiros automatizados de forma determinística e consulta acervos documentais sem alucinações, recorrendo a modelos de linguagem locais (Ollama) apenas para interações gerais e suporte inteligente.
+1. **Pedidos informais:** compradores enviam pedidos em linguagem natural e bagunçada, o que dificulta a triagem e o controle de capacidade.
+2. **Documentos dispersos:** certificações, contratos e fichas técnicas ficam guardados sem estrutura.
+3. **Comunicação manual:** notificações de pedidos e resumos financeiros aos produtores dependem de processos repetitivos.
 
----
+O assistente cobre esses três fluxos, que são também os três fluxos da demo:
 
-## Arquitetura do Sistema e Funcionamento do Código
-
-O projeto adota uma arquitetura **Hub-and-Spoke**, onde o núcleo orquestrador direciona as solicitações para submódulos especializados em Python:
-
-                  ┌────────────────────────────────┐
-                  │  Interface Streamlit / Router  │
-                  │       (Rag/chat_local.py)      │
-                  └───────────────┬────────────────┘
-                                  │
-      ┌───────────────────────────┼───────────────────────────┐
-      ▼                           ▼                           ▼
-┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
-│ Sub-Agente       │        │ Sub-Agente       │        │ Modelo LLM       │
-│ Financeiro       │        │ de Produtores/RAG│        │ Local (Ollama)   │
-│ (financeiro.py)  │        │ (produtores.py)  │        │ (.env: llama3)   │
-└─────────┬────────┘        └─────────┬────────┘        └──────────────────┘
-│                           │
-▼                           ▼
-┌──────────────────┐        ┌──────────────────┐
-│ Facepe/          │        │ Facepe/          │
-│ financeiro.csv   │        │ acervo & JSON    │
-└──────────────────┘        └──────────────────┘
-
-
-### Funcionamento dos Módulos
-
-1. **Agente Construtor / Orquestrador (`Rag/chat_local.py`)**
-   - **Interface Reativa:** Interface web interativa via **Streamlit** com controle de histórico de sessão (`st.session_state`).
-   - **Roteamento de Intenções:** Analisa a entrada em linguagem natural e decide deterministicamente qual sub-agente acionar:
-     - *Intenções Financeiras* ➔ Chama `apurar_financeiro()`
-     - *Intenções Documentais* ➔ Chama `buscar_acervo_local()`
-     - *Triagem de Pedidos* ➔ Chama `processar_pedido_natural()`
-     - *Comunicação/Resumos* ➔ Chama `gerar_resumo_produtor()`
-     - *Consultas Genéricas* ➔ Transmite a requisição ao **Ollama** usando o modelo definido no arquivo `.env`.
-
-2. **Sub-Agente Financeiro (`Rag/financeiro_modulo.py`)**
-   - Processa a base estruturada `Facepe/financeiro.csv` via **Pandas**.
-   - Calcula valores consolidados de vendas, totais recebidos e pendências em aberto por produtor com **precisão matemática exata** (sem risco de alucinação de valores).
-
-3. **Sub-Agente de Produtores, Pedidos e RAG Local (`Rag/produtores_modulo.py`)**
-   - **Triagem de Linguagem Natural (`processar_pedido_natural`):** Extrai produtos, quantidades e prazos a partir de pedidos informais enviados por compradores.
-   - **Comunicação Otimizada (`gerar_resumo_produtor`):** Compila o saldo e os pedidos pendentes de cada produtor em mensagens prontas, eliminando chamadas manuais.
-   - **RAG Local (`buscar_acervo_local`):** Varre as pastas de certificações, contratos e fichas técnicas (`Facepe/`), retornando trechos relevantes com **atribuição direta da fonte**.
-
-4. **Gerenciamento de Ambiente (`.env`)**
-   - Define dinamicamente o modelo local do Ollama (ex: `OLLAMA_MODEL=llama3`) e configurações de execução sem hardcoding no código principal.
+- **Triagem de pedidos:** extrai produto, quantidade, prazo e comprador, e avalia o pedido (datas, safra, capacidade).
+- **Consulta documental (RAG):** responde sobre certificações, rastreabilidade, sazonalidade e lotes, sempre citando o documento de origem.
+- **Comunicação com produtores:** gera resumos personalizados e notificações de novos pedidos.
 
 ---
 
-## Estrutura de Diretórios
+## Arquitetura
+
+**Agente único com ferramentas**, no padrão do ADK. O `root_agent` (em `sabor_da_terra/agent.py`) recebe as 8 ferramentas e o Gemini decide qual chamar a partir das docstrings.
+
+```text
+                 ┌──────────────────────────────┐
+                 │  Chat Streamlit (app/chat.py) │
+                 │   ou ADK Web (desenvolvimento)│
+                 └──────────────┬───────────────┘
+                                │ Runner + InMemorySessionService
+                                ▼
+                 ┌──────────────────────────────┐
+                 │  root_agent (Gemini)          │
+                 │  prompts.py · callbacks.py    │
+                 └──────────────┬───────────────┘
+        ┌───────────────┬───────┴───────┬────────────────┐
+        ▼               ▼               ▼                ▼
+   pedidos.py       acervo.py      lotes.py         comunicacao.py
+   registrar        buscar_         consultar_lote   gerar_comunicacao
+   atualizar        documentos      financeiro.py
+   avaliar          verificar_      apurar_
+                    certificacao    financeiro
+        │               │               │
+        ▼               ▼               ▼
+   db/consultas.py  índice local    CSVs da Facepe/ (Pandas)
+   (Pandas)         de embeddings   Postgres + pgvector é bônus
+```
+
+Princípios:
+
+- **O modelo não calcula.** Datas, safra, capacidade, vigência de certificados e valores financeiros são resolvidos em código. O Gemini só interpreta e redige.
+- **Toda afirmação tem fonte.** As ferramentas devolvem o arquivo e a página, linha ou seção de onde tiraram o dado.
+- **Conteúdo externo é dado.** Mensagens de pedidos e texto dos PDFs nunca são tratados como instruções.
+- **Modelo em variável de ambiente** (`GEMINI_MODEL`), para trocar sem mexer no código.
+
+### Contrato das ferramentas
+
+Toda ferramenta devolve o mesmo formato (ver `sabor_da_terra/tools/contrato.py`):
+
+```python
+{"status": "ok" | "nao_encontrado" | "pendente" | "erro",
+ "dados": {...},
+ "fontes": [{"arquivo": "...", "referencia": "página, linha ou seção"}],
+ "mensagem": "..."}
+```
+
+Use a função `resposta(status, dados, fontes, mensagem)` para montar o retorno. `status: "erro"` é só para erros esperados (lote inexistente, argumento inválido). Falhas inesperadas devem propagar: nada de `except Exception` genérico dentro das ferramentas.
+
+| Ferramenta | Arquivo | Dono |
+|---|---|---|
+| `registrar_pedido`, `atualizar_pedido`, `avaliar_pedido` | `tools/pedidos.py` | P2 |
+| `buscar_documentos`, `verificar_certificacao` | `tools/acervo.py` | P3 |
+| `consultar_lote` | `tools/lotes.py` | P4 |
+| `apurar_financeiro` | `tools/financeiro.py` | P4 |
+| `gerar_comunicacao` | `tools/comunicacao.py` | P5 |
+
+---
+
+## Estrutura de diretórios
 
 ```text
 sabor-da-terra-agent/
-├── .env                       # Variáveis de ambiente (modelo Ollama, hosts)
-├── .gitignore                 # Exclusão de base local (Facepe) e segredos
-├── README.md                  # Documentação do projeto
-├── Facepe/                    # Base de dados local (desconsiderada no git)
-│   ├── financeiro.csv         # Registros de vendas e pagamentos
-│   ├── pedidos.json           # Registros de pedidos
-│   ├── certificacoes/         # Documentos de certificação orgânica
-│   ├── contratos/             # Contratos da cooperativa
-│   └── fichas_tecnicas/       # Fichas técnicas de produtos
-└── Rag/                       # Código-fonte da aplicação
-    ├── chat_local.py          # Agente Construtor / Interface Streamlit
-    ├── financeiro_modulo.py   # Sub-agente de apuração financeira
-    └── produtores_modulo.py   # Sub-agente de acervo documental e pedidos
-Como Executar o Projeto
-Pró-requisitos
-Python 3.10+ instalado.
+├── sabor_da_terra/          # pacote do agente (padrão do ADK)
+│   ├── .env                 # sua chave e o modelo (fora do Git, crie a partir do .env.example)
+│   ├── agent.py             # root_agent: modelo, instruções, ferramentas (só o P1 edita)
+│   ├── prompts.py           # instruções do agente, versionadas
+│   ├── callbacks.py         # validação de argumentos, limite de iterações, log
+│   ├── schemas.py           # Pedido e Item (P2, a criar)
+│   ├── tools/               # as 8 ferramentas + contrato.py
+│   ├── db/                  # consultas aos dados (Pandas; Postgres se entrar)
+│   └── evals/               # evalsets do `adk eval`
+├── app/                     # chat.py em Streamlit (P1-4)
+├── ingestao/                # importação de tabelas e documentos
+├── tests/                   # pytest das regras determinísticas
+├── docs/                    # arquitetura, decisões, custos, apresentação
+├── Rag/                     # código antigo, sendo migrado (ver abaixo)
+├── Facepe/                  # dados originais (fora do Git)
+├── requirements.txt
+└── .env.example
+```
 
-Ollama instalado e em execução no sistema.
+### Migração da pasta `Rag/`
 
-1. Instalação das Dependências
-No terminal da raiz do projeto, instale as bibliotecas necessárias:
+A pasta `Rag/` é o protótipo anterior (roteador por palavras-chave + Ollama). Ela continua no repositório como referência até cada dono migrar sua parte, e depois será removida.
 
-Bash
-pip install streamlit pandas python-dotenv ollama
-2. Download do Modelo LLM Local
-Garanta que o modelo configurado no .env (ex: llama3) está baixado no seu computador:
+| Hoje | Vai para | Dono |
+|---|---|---|
+| `Rag/chat_local.py` | `app/chat.py` (sai o roteador, entra o `Runner` do ADK) | P1 |
+| `Rag/financeiro_modulo.py` | `sabor_da_terra/tools/financeiro.py` | P4 |
+| `Rag/produtores_modulo.py` → `processar_pedido_natural` | `sabor_da_terra/tools/pedidos.py` | P2 |
+| `Rag/produtores_modulo.py` → `buscar_acervo_local` | `sabor_da_terra/tools/acervo.py` | P3 |
+| `Rag/produtores_modulo.py` → `gerar_resumo_produtor` | `sabor_da_terra/tools/comunicacao.py` | P5 |
 
-Bash
-ollama run llama3
-3. Configuração do Arquivo .env
-Crie ou edite o arquivo .env na raiz do projeto:
+---
 
-Snippet de código
-OLLAMA_HOST=http://localhost:11434
-OLLAMA_MODEL=llama3
-4. Execução da Aplicação
-Na raiz do projeto (sabor-da-terra-agent), execute:
+## Como rodar
 
-Bash
-streamlit run Rag/chat_local.py
-Acesse a aplicação no navegador através do endereço http://localhost:8501.
+### Pré-requisitos
 
-Exemplos de Prompts para Teste
-Financeiro: "Qual o resumo de vendas da Ana?" ou "Ver financeiro de Antônio"
+- **Python 3.11 ou superior** (3.12 recomendado). O ADK 2.x não instala em versões anteriores.
+- Uma chave do **Google AI Studio**.
+- A pasta `Facepe/` com os dados, na raiz do projeto (ela não vem pelo Git).
 
-RAG / Acervo: "Quem possui certificação de mel?" ou "Buscar laudo técnico de queijo"
+### 1. Ambiente e dependências
 
-Interpretação de Pedido: "Preciso encomendar 40kg de queijo coalho para a próxima semana"
+Windows (PowerShell):
 
-Notificação a Produtor: "Gerar notificação e resumo do produtor Antônio"
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
 
-Consultas Gerais (Ollama): "Quais são as melhores práticas para conservação de produtos orgânicos?"
+Linux / macOS:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. Configurar o `.env`
+
+Copie o modelo para dentro da pasta do agente (é lá que o `adk web` procura):
+
+```bash
+cp .env.example sabor_da_terra/.env
+```
+
+Depois edite `sabor_da_terra/.env` e coloque sua `GOOGLE_API_KEY`. Não defina `GOOGLE_GENAI_USE_ENTERPRISE` no protótipo.
+
+### 3. Conferir que as ferramentas importam
+
+```bash
+python -c "from sabor_da_terra.tools import FERRAMENTAS; print(len(FERRAMENTAS), 'ferramentas')"
+```
+
+### 4. Conversar com o agente (desenvolvimento)
+
+Na raiz do projeto:
+
+```bash
+adk web
+```
+
+Abra o endereço indicado no terminal e escolha o agente `sabor_da_terra`. A ADK Web é só para desenvolvimento.
+
+### 5. Chat em Streamlit
+
+Ainda não disponível: entra na task P1-4 (`app/chat.py`).
+
+### Testes
+
+```bash
+pytest
+```
+
+---
+
+## Regras da equipe
+
+- Cada pessoa mexe só nos próprios arquivos. Mudança em arquivo de outro vai por mensagem ao dono.
+- Só o P1 edita `agent.py`. Ferramenta nova ou ajuste no prompt, peçam ao P1.
+- As assinaturas dos stubs são uma proposta: o dono pode ajustar, avisando o P1.
+- Commits pequenos e merge em `main` nos marcos do cronograma.
+- `.env` e `Facepe/` ficam fora do Git.
