@@ -2,7 +2,7 @@
 
 Protótipo de assistente conversacional para a **Cooperativa Sabor da Terra** (fictícia, 180 produtores no Agreste), construído com o **Google ADK** e o **Gemini**.
 
-> **Status:** P1-2 concluída. O agente conversa na ADK Web com o prompt completo, mas as 8 ferramentas ainda são *stubs*: têm assinatura e docstring e devolvem `"status": "erro"` com a mensagem "ainda não implementada". Cada dono substitui o stub pelo código real.
+> **Status:** P1-3 concluída. O agente conversa na ADK Web com o prompt completo e os callbacks (validação de argumentos, limite de 5 iterações, log), mas as 8 ferramentas ainda são *stubs*: têm assinatura e docstring e devolvem `"status": "erro"` com a mensagem "ainda não implementada". Cada dono substitui o stub pelo código real.
 
 ---
 
@@ -180,6 +180,7 @@ Abra o endereço indicado no terminal (normalmente `http://127.0.0.1:8000`) e es
 - Na primeira vez, o ADK pergunta se pode coletar dados de uso. Pode responder `n`.
 - O seletor também lista outras pastas (`app`, `docs`, `Rag`…). Ignore e escolha `sabor_da_terra`.
 - Clique em cada evento da conversa para ver qual ferramenta foi chamada, com os argumentos e o retorno.
+- No terminal aparecem os logs dos callbacks: `chamada ao modelo 1/5`, `ferramenta=... args=...`, `status=...` e os argumentos inválidos barrados.
 - O `.env` só é lido quando a ADK Web sobe: depois de editá-lo, faça `Ctrl+C`, rode `adk web` de novo e abra uma nova sessão.
 - Se a resposta ficar "carregando" ou der 503, o modelo está sobrecarregado no Google. Troque o `GEMINI_MODEL` no `.env`.
 

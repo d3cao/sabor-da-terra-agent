@@ -11,6 +11,12 @@ from google.adk.agents import Agent
 from google.adk.models.google_llm import Gemini
 from google.genai import types
 
+from .callbacks import (
+    limitar_iteracoes,
+    registrar_resultado,
+    tratar_erro_modelo,
+    validar_argumentos,
+)
 from .prompts import instrucao_raiz
 from .tools import FERRAMENTAS
 
@@ -42,4 +48,8 @@ root_agent = Agent(
     description="Assistente da Cooperativa Sabor da Terra: pedidos, documentos e comunicação com produtores.",
     instruction=instrucao_raiz,
     tools=FERRAMENTAS,
+    before_tool_callback=validar_argumentos,
+    after_tool_callback=registrar_resultado,
+    before_model_callback=limitar_iteracoes,
+    on_model_error_callback=tratar_erro_modelo,
 )
